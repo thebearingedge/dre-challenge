@@ -9,7 +9,7 @@ describe('belvethUltPassive(baseDmg, hits, bonusAD)', function () {
   context('2, 1, 2', function () {
 
     it('returns 5', function () {
-      var output = belvethUltPassive(2, 1, 2);
+      const output = belvethUltPassive(2, 1, 2);
       expect(output).to.deep.equal(5);
     });
 
