@@ -1,40 +1,58 @@
 /* global expect, belvethUltPassive */
 
-describe('belvethUltPassive(baseDmg, hits, bonusAD)', function () {
+describe('belvethUltPassive(baseDmg, hits, bonusAD)', () => {
 
-  beforeEach(function () {
+  beforeEach(() => {
     expect(belvethUltPassive).to.be.a('function');
   });
 
-  context('2, 1, 2', function () {
+  context('(8, 10, 100)', () => {
 
-    it('returns 5', function () {
-      const output = belvethUltPassive(2, 1, 2);
-      expect(output).to.deep.equal(5);
+    it('returns 135', () => {
+      const result = belvethUltPassive(8, 10, 100);
+      expect(result).to.deep.equal(135);
+    })
+  })
+
+  context('(5, 1, 100)', () => {
+
+    it('returns 0', () => {
+      const result = belvethUltPassive(5, 1, 100);
+      expect(result).to.deep.equal(0);
     });
 
   });
 
-  // context('["html", "css", "javascript"] and ["php", "css", "sql"]', function () {
+  context('(20, 0, 100)', () => {
 
-  //   it('returns ["html", "javascript", "php", "sql"]', function () {
-  //     var first = Object.freeze(['html', 'css', 'javascript']);
-  //     var second = Object.freeze(['php', 'css', 'sql']);
-  //     var output = difference(first, second);
-  //     expect(output).to.deep.equal(['html', 'javascript', 'php', 'sql']);
-  //   });
+    it('returns 0', () => {
+      const result = belvethUltPassive(20, 0, 100);
+      expect(result).to.deep.equal(0);
+    })
+  })
 
-  // });
+  context('(8, 10, 50)', () => {
 
-  // context('["a", "link", "to", "the", "past"] and ["the", "adventure", "of", "link"]', function () {
+    it('returns 68', () => {
+      const result = belvethUltPassive(8, 10, 50);
+      expect(result).to.deep.equal(68);
+    })
+  })
 
-  //   it('returns ["a", "to", "past", "adventure", "of"]', function () {
-  //     var first = Object.freeze(['a', 'link', 'to', 'the', 'past']);
-  //     var second = Object.freeze(['the', 'adventure', 'of', 'link']);
-  //     var output = difference(first, second);
-  //     expect(output).to.deep.equal(['a', 'to', 'past', 'adventure', 'of']);
-  //   });
+  context('(8, 10, 0)', () => {
 
-  // });
+    it('returns 120', () => {
+      const result = belvethUltPassive(8, 10, 0);
+      expect(result).to.deep.equal(120);
+    })
+  })
+
+  context('(8, 10)', () => {
+
+    it('returns 120', () => {
+      const result = belvethUltPassive(8, 10);
+      expect(result).to.deep.equal(120);
+    })
+  })
 
 });

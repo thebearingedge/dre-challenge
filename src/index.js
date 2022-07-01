@@ -1,5 +1,11 @@
 /* exported belvethUltPassive */
+/**
+ * @param {number} baseDmg
+ * @param {number} hits
+ * @param {number?} bonusAD
+ * @return {number}
+ */
 
-function belvethUltPassive(baseDmg, hits, bonusAD) {
-  return baseDmg + hits + bonusAD;
+const belvethUltPassive = (baseDmg, hits, bonusAD) => {
+
 }
