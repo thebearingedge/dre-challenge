@@ -4,6 +4,7 @@ describe('belvethUltPassive(baseDmg, hits, bonusAD)', () => {
 
   beforeEach(() => {
     expect(belvethUltPassive).to.be.a('function');
+    expect(belvethUltPassive(8, 10, 100)).to.be.a('number');
   });
 
   context('(8, 10, 100)', () => {
@@ -31,27 +32,35 @@ describe('belvethUltPassive(baseDmg, hits, bonusAD)', () => {
     })
   })
 
-  context('(8, 10, 50)', () => {
+  context('(8, 6, 50)', () => {
 
-    it('returns 68', () => {
-      const result = belvethUltPassive(8, 10, 50);
-      expect(result).to.deep.equal(68);
+    it('returns 51', () => {
+      const result = belvethUltPassive(8, 6, 50);
+      expect(result).to.deep.equal(51);
     })
   })
 
-  context('(8, 10, 0)', () => {
+  context('(8, 25, 0)', () => {
 
-    it('returns 120', () => {
-      const result = belvethUltPassive(8, 10, 0);
-      expect(result).to.deep.equal(120);
+    it('returns 624', () => {
+      const result = belvethUltPassive(8, 25, 0);
+      expect(result).to.deep.equal(624);
     })
   })
 
-  context('(8, 10)', () => {
+  context('(40, 18, 47)', () => {
 
-    it('returns 120', () => {
-      const result = belvethUltPassive(8, 10);
-      expect(result).to.deep.equal(120);
+    it('returns 1821.1', () => {
+      const result = belvethUltPassive(40, 18, 47);
+      expect(result).to.deep.equal(1821.1);
+    })
+  })
+
+  context('(12, 10)', () => {
+
+    it('returns 180', () => {
+      const result = belvethUltPassive(12, 10);
+      expect(result).to.deep.equal(180);
     })
   })
 
