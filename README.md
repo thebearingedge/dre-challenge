@@ -12,4 +12,7 @@ Create a function that accepts `baseDmg`, `hits`, and `bonusAD` as parameters an
 `bonusAD` isn't required and the function should work without it.
 <break/>
 
-Answers should be rounded to the nearest decimal point (If it has one).
+Answers should be rounded with a single decimal point (If it has one).
+<break/>
+
+The [toFixed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed) method of a number allows you to round to a decimal point of your choosing. Beware, it converts a number into a string.
